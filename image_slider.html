@@ -1,0 +1,22 @@
+<head>
+  <title>image_slider</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> ImageGallery}}
+</body>
+
+<template name="ImageGallery">
+  <button type="button" class="click-to-see-next-image">nextImage</button>
+    <div class="image-in-gallery">
+        {{#with currentImage}}
+          {{#if loaded}}
+                <img src="{{src}}">
+          {{else}}
+              LOADING
+          {{/if}}
+        {{/with}}
+    </div>
+</template>
